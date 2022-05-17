@@ -7,6 +7,10 @@ body {
     margin: 0;
 }
 
+main{
+    padding: 40px;
+}
+
 .nav{
     display: flex;
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
@@ -22,9 +26,40 @@ body {
 
 .nav--title{
     margin-right: auto;
+    font-size: 2em;
 }
 .nav--course{
-    font-size: 0.7em;
+    font-size: 1em;
     font-style: italic;    
 }
 
+form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 24px;
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 15px;    
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    box-shadow: 0 0 10px #711F8D;
+}
+
+button{
+    grid-column: -1 / 1;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor:pointer;
+}
+
+button:hover{
+    background: linear-gradient(90.41deg, #3a1248 1.14%, #471359 100%);
+}
