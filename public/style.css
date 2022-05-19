@@ -8,7 +8,7 @@ body {
 }
 
 main{
-    padding: 40px;
+    padding: 30px;
 }
 
 .nav{
@@ -19,17 +19,17 @@ main{
     padding: 15px;
 }
 .nav--logo{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
 
 .nav--title{
     margin-right: auto;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .nav--course{
-    font-size: 1em;
+    font-size: .9em;
     font-style: italic;    
 }
 
@@ -62,4 +62,15 @@ button{
 
 button:hover{
     background: linear-gradient(90.41deg, #3a1248 1.14%, #471359 100%);
+}
+
+.meme--image{
+    max-width: 100%;        
+    padding: 20px;
+}
+
+@media only screen and (min-width: 680px){
+    main{
+        padding: 30px 190px;
+    }    
 }
