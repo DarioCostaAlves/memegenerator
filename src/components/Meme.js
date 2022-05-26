@@ -20,6 +20,7 @@ export default function Meme(){
         }))
     }
 
+
     function handleChange(event) {
         const {name, value} = event.target
         setMeme(prevMeme => ({
@@ -30,12 +31,12 @@ export default function Meme(){
     function handleSubmit(event) {
         event.preventDefault()
         // submitToApi(formData)
-        console.log(formData)
+        console.log(allMemeImages)
     }
         
     return(
         <main>
-            <div className="form">
+            <form onSubmit={handleSubmit}>
                 <input 
                 className="input"
                 type="text" 
@@ -58,8 +59,12 @@ export default function Meme(){
                 >
                     Get a new meme image 🖼
                 </button>
+            </form>
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
-            <img src={meme.randomImage} className="meme--image"/>
         </main>
     )
 }

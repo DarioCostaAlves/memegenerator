@@ -33,7 +33,7 @@ main{
     font-style: italic;    
 }
 
-.form {
+form {
     display: grid;
     grid-template: 40px 40px / 1fr 1fr;
     gap: 24px;
@@ -63,10 +63,12 @@ button{
 button:hover{
     background: linear-gradient(90.41deg, #3a1248 1.14%, #471359 100%);
 }
-
+.meme{
+    position: relative;
+}
 .meme--image{
-    max-width: 100%;        
-    padding: 20px;
+    width: 100%;        
+    padding: 10px;
 }
 
 .meme--text {
