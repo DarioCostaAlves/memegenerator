@@ -1,25 +1,30 @@
-import React,{useState} from "react";
-import memesData from "../memesData"
+import React,{useState, useEffect} from "react";
 
 export default function Meme(){
+
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })    
 
-    const [allMemeImages, setAllMemeImages] = useState(memesData)
+    const [allMemes, setAllMemes] = useState([])
     
+    useEffect(function(){
+        fetch("https://api.imgflip.com/get_memes")
+            .then(response => response.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
+    // console.log(allMemes)
     function getMemeImage(){
-        const memesArray = allMemeImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url
+        
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
         }))
     }
-
 
     function handleChange(event) {
         const {name, value} = event.target
@@ -28,10 +33,11 @@ export default function Meme(){
             [name]: value
         }))
     }
+
     function handleSubmit(event) {
         event.preventDefault()
         // submitToApi(formData)
-        console.log(allMemeImages)
+        console.log(allMemes)
     }
         
     return(
